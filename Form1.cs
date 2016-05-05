@@ -18,12 +18,26 @@ namespace Minecraft_地圖匯出工具
         {
             InitializeComponent();
         }
-
+        public void LoadMap(string[] path)
+        {
+            string name,date;
+            foreach (var map in path)
+            {
+                if (File.Exists(map + @"\level.dat"))
+                {
+                    name = Path.GetFileNameWithoutExtension(map);
+                    date = Directory.GetLastAccessTime(map).ToString();
+                    ListViewItem name_item = new ListViewItem();
+                    name_item.Text = name;
+                    name_item.Tag = name;
+                    name_item.SubItems.Add(date);
+                    MapList.Items.Add(name_item);
+                }
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
-            ExportPath.Text = "未選擇";
-            MapList.Columns.Add("地圖名稱", 160);
-            MapList.Columns.Add("修改時間", 165);
+            ExportPath.Text = "N/A";
             string AppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\.minecraft\saves";
             if (Directory.Exists(AppDataPath) == true)
             {
@@ -31,32 +45,55 @@ namespace Minecraft_地圖匯出工具
 
                 //如預設位置有地圖存檔，將在表單載入時顯示清單
                 string[] MapFolderList = Directory.GetDirectories(AppDataPath);
-                foreach(var map in MapFolderList)
-                {
-
-                    string name = Path.GetFileNameWithoutExtension(map);
-                    ListViewItem item = new ListViewItem();
-                    item.Text = name;
-                    MapList.Items.Add(item);
-
-                }
+                LoadMap(MapFolderList);
             }
             else
             {
-                MapPath.Text = "未選擇";
+                MapPath.Text = "N/A";
             }
         }
 
         private void MapChoose_Click(object sender, EventArgs e)
         {
             MapFolder.ShowDialog();
-            string MapChoosePath = MapFolder.SelectedPath;
-
+            MapPath.Text = MapFolder.SelectedPath;
+            string DataPath = MapPath.Text;
+            MapPath.Text = DataPath;
+            //如有地圖存檔，將載入清單
+            string[] MapFolderList = Directory.GetDirectories(DataPath);
+            MapList.Items.Clear();
+            LoadMap(MapFolderList);
         }
 
         private void ExportChoose_Click(object sender, EventArgs e)
         {
+            ExportFolder.ShowDialog();
+            ExportPath.Text = ExportFolder.SelectedPath;
+        }
 
+        private void ExportButton_Click(object sender, EventArgs e)
+        {
+            if (ExportPath.Text==""||textBox1.Text=="")
+            {
+                MessageBox.Show("Missing The File Name Or Path", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(File.Exists(ExportPath.Text + @"\" + textBox1.Text + ".zip"))
+            {
+                MessageBox.Show("Confirm File Replace", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MapList.SelectedItems.Count != 0)
+                {
+                    ListView.SelectedListViewItemCollection select = MapList.SelectedItems;
+                    ZipFile.CreateFromDirectory(MapPath.Text +"\\"+ select[0].Text, ExportPath.Text+"\\" + textBox1.Text +".zip");
+                    MessageBox.Show("Success！");
+                }
+                else
+                {
+                    MessageBox.Show("Please Choose A Map", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

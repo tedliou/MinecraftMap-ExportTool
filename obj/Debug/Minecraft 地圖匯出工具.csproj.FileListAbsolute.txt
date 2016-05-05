@@ -7,3 +7,12 @@ C:\Users\tedliou\Desktop\Minecraft 地圖匯出工具\obj\Debug\Minecraft_地圖
 C:\Users\tedliou\Desktop\Minecraft 地圖匯出工具\obj\Debug\Minecraft 地圖匯出工具.csproj.GenerateResource.Cache
 C:\Users\tedliou\Desktop\Minecraft 地圖匯出工具\obj\Debug\Minecraft 地圖匯出工具.exe
 C:\Users\tedliou\Desktop\Minecraft 地圖匯出工具\obj\Debug\Minecraft 地圖匯出工具.pdb
+C:\Users\tedliou\Desktop\Minecraft 地圖匯出工具\MinecraftMap-ExportTool\bin\Debug\Minecraft 地圖匯出工具.exe.config
+C:\Users\tedliou\Desktop\Minecraft 地圖匯出工具\MinecraftMap-ExportTool\obj\Debug\Minecraft 地圖匯出工具.exe
+C:\Users\tedliou\Desktop\Minecraft 地圖匯出工具\MinecraftMap-ExportTool\obj\Debug\Minecraft 地圖匯出工具.pdb
+C:\Users\tedliou\Desktop\Minecraft 地圖匯出工具\MinecraftMap-ExportTool\bin\Debug\Minecraft 地圖匯出工具.exe
+C:\Users\tedliou\Desktop\Minecraft 地圖匯出工具\MinecraftMap-ExportTool\bin\Debug\Minecraft 地圖匯出工具.pdb
+C:\Users\tedliou\Desktop\Minecraft 地圖匯出工具\MinecraftMap-ExportTool\obj\Debug\Minecraft 地圖匯出工具.csprojResolveAssemblyReference.cache
+C:\Users\tedliou\Desktop\Minecraft 地圖匯出工具\MinecraftMap-ExportTool\obj\Debug\Minecraft_地圖匯出工具.Form1.resources
+C:\Users\tedliou\Desktop\Minecraft 地圖匯出工具\MinecraftMap-ExportTool\obj\Debug\Minecraft_地圖匯出工具.Properties.Resources.resources
+C:\Users\tedliou\Desktop\Minecraft 地圖匯出工具\MinecraftMap-ExportTool\obj\Debug\Minecraft 地圖匯出工具.csproj.GenerateResource.Cache

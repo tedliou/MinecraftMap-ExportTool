@@ -42,7 +42,6 @@ namespace Minecraft_地圖匯出工具
             if (Directory.Exists(AppDataPath) == true)
             {
                 MapPath.Text = AppDataPath;
-
                 //如預設位置有地圖存檔，將在表單載入時顯示清單
                 string[] MapFolderList = Directory.GetDirectories(AppDataPath);
                 LoadMap(MapFolderList);
@@ -56,19 +55,31 @@ namespace Minecraft_地圖匯出工具
         private void MapChoose_Click(object sender, EventArgs e)
         {
             MapFolder.ShowDialog();
-            MapPath.Text = MapFolder.SelectedPath;
-            string DataPath = MapPath.Text;
-            MapPath.Text = DataPath;
             //如有地圖存檔，將載入清單
-            string[] MapFolderList = Directory.GetDirectories(DataPath);
-            MapList.Items.Clear();
-            LoadMap(MapFolderList);
+            if (MapFolder.SelectedPath != "")
+            {
+                MapPath.Text = MapFolder.SelectedPath;
+                string[] MapFolderList = Directory.GetDirectories(MapFolder.SelectedPath);
+                MapList.Items.Clear();
+                LoadMap(MapFolderList);
+            }
+            else
+            {
+                MapPath.Text = "N/A";
+            }
         }
 
         private void ExportChoose_Click(object sender, EventArgs e)
         {
             ExportFolder.ShowDialog();
-            ExportPath.Text = ExportFolder.SelectedPath;
+            if (ExportFolder.SelectedPath != "")
+            {
+                ExportPath.Text = ExportFolder.SelectedPath;
+            }
+            else
+            {
+                ExportPath.Text = "N/A";
+            }
         }
 
         private void ExportButton_Click(object sender, EventArgs e)

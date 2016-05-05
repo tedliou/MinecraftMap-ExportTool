@@ -13,4 +13,4 @@
 
 # Download
 
-  Link：https://github.com/tedliou/MinecraftMap-ExportTool/raw/master/bin/Debug/Minecraft%地圖匯出工具.exe
+  Link：https://github.com/tedliou/MinecraftMap-ExportTool/raw/master/bin/Debug/Minecraft%20地圖匯出工具.exe

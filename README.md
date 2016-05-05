@@ -1,4 +1,4 @@
-# MinecraftMap ExportTool
+# Minecraft Map ExportTool
 This is a tool to export Minecraft Map.
 It can compress Minecraft Map into a zip file.
 

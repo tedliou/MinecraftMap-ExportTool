@@ -97,8 +97,10 @@ namespace Minecraft_地圖匯出工具
                 if (MapList.SelectedItems.Count != 0)
                 {
                     ListView.SelectedListViewItemCollection select = MapList.SelectedItems;
-                    ZipFile.CreateFromDirectory(MapPath.Text +"\\"+ select[0].Text, ExportPath.Text+"\\" + textBox1.Text +".zip");
+                    ZipFile.CreateFromDirectory(MapPath.Text + "\\" + select[0].Text, ExportPath.Text + "\\" + textBox1.Text + ".zip", CompressionLevel.Optimal, true, UTF8Encoding.UTF8);
                     MessageBox.Show("Success！");
+
+
                 }
                 else
                 {
